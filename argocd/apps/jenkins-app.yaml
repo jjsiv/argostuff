@@ -1,15 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: jed-app
+  name: jenkins-app
   namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
+  project: jenkins
   destination:
-    namespace: jed
+    namespace: jenkins
     server: https://kubernetes.default.svc
-  project: jed
   source:
-    path: jed/
+    path: jenkins/
     repoURL: https://github.com/jjsiv/argostuff.git
     targetRevision: main
   syncPolicy:
