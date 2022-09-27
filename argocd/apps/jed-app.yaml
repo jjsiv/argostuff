@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jed-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: jed
+    server: https://kubernetes.default.svc
+  project: jed
+  source:
+    path: jed/namespaces/
+    repoURL: https://github.com/jjsiv/argostuff.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      selfHeal: true
