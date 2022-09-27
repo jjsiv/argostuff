@@ -14,6 +14,8 @@ spec:
     path: jenkins/
     repoURL: https://github.com/jjsiv/argostuff.git
     targetRevision: main
+    directory:
+      recurse: true
   syncPolicy:
     automated:
       selfHeal: true
