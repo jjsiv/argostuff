@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: app-sync
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: 'argoproj.io'
+    kind: Application
+  destinations:
+  - namespace: argocd
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - https://github.com/jjsiv/argostuff.git
