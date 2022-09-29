@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: fluent-operator
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: 'fluent.fluentbit.io'
+    kind: ''
+  destinations:
+  - namespace: logging
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - https://github.com/jjsiv/argostuff.git
