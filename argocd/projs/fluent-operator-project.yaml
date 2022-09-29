@@ -6,7 +6,7 @@ metadata:
 spec:
   clusterResourceWhitelist:
   - group: 'fluentbit.fluent.io'
-    kind: ''
+    kind: '*'
   destinations:
   - namespace: logging
     server: https://kubernetes.default.svc
