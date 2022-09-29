@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   clusterResourceWhitelist:
-  - group: 'fluent.fluentbit.io'
+  - group: 'fluentbit.fluent.io'
     kind: ''
   destinations:
   - namespace: logging
