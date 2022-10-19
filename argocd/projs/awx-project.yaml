@@ -6,7 +6,7 @@ metadata:
 spec:
   clusterResourceWhitelist:
   - group: ''
-    kind: '*'
+    kind: 'Namespace'
   clusterResourceBlacklist:
   - group: 'apps'
     kind: Deployment
