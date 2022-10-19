@@ -5,10 +5,9 @@ metadata:
   namespace: argocd
 spec:
   clusterResourceWhitelist:
-  - group: 'fluentbit.fluent.io'
-    kind: '*'
   - group: ''
     kind: '*'
+  clusterResourceBlacklist:
   - group: 'apps'
     kind: Deployment
   - group: 'apiextensions.k8s.io'
