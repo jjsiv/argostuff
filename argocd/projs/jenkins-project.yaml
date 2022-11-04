@@ -7,6 +7,12 @@ spec:
   clusterResourceWhitelist:
   - group: ''
     kind: Namespace
+  - group: apps
+    kind: '*'
+  - group: 'networking.k8s.io'
+    kind: '*'
+  - group: 'rbac.authorization.k8s.io'
+    kind: '*'
   destinations:
   - namespace: jenkins
     server: https://kubernetes.default.svc
