@@ -11,8 +11,8 @@ spec:
     namespace: logging
     server: https://kubernetes.default.svc
   source:
-    path: fluent/
-    repoURL: https://github.com/jjsiv/argostuff.git
+    path: gitops/fluent/
+    repoURL: https://github.com/jjsiv/jed-cluster.git
     targetRevision: main
     directory:
       recurse: true

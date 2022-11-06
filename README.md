@@ -1,1 +1,1 @@
-# gitOps things
+# Configurations for jed's home cluster

@@ -9,8 +9,8 @@ spec:
     server: https://kubernetes.default.svc
   project: jed
   source:
-    path: jed/
-    repoURL: https://github.com/jjsiv/argostuff.git
+    path: gitops/jed/
+    repoURL: https://github.com/jjsiv/jed-cluster.git
     targetRevision: main
     directory:
       recurse: true

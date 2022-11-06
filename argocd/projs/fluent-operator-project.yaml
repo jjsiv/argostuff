@@ -21,4 +21,4 @@ spec:
   - namespace: logging
     server: https://kubernetes.default.svc
   sourceRepos:
-  - https://github.com/jjsiv/argostuff.git
+  - https://github.com/jjsiv/git-cluster.git

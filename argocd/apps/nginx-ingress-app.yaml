@@ -11,8 +11,8 @@ spec:
     namespace: nginx-ingress
     server: https://kubernetes.default.svc
   source:
-    path: nginx-ingress/
-    repoURL: https://github.com/jjsiv/argostuff.git
+    path: gitops/nginx-ingress/
+    repoURL: https://github.com/jjsiv/jed-cluster.git
     targetRevision: main
     directory:
       recurse: true
