@@ -1,3 +1,10 @@
 ---
+- name: Configure system environment
+  hosts: workers
+  remote_user: jjk
+  become: true
 
-# Nothing here yet
+  tasks:
+    - name: Prepare the system environment
+      ansible.builtin.include_role:
+        name: basic_configuration

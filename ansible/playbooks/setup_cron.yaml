@@ -1,0 +1,33 @@
+---
+- name: Download the script repository
+  hosts: localhost
+  become: false
+
+  tasks:
+    - name: Cleanup old directory
+      ansible.builtin.file:
+        path: /tmp/jed-cluster
+        state: absent
+
+    - name: Clone git repository
+      ansible.builtin.git:
+        repo: https://github.com/jjsiv/jed-cluster.git
+        dest: /tmp/jed-cluster
+
+- name: Configure crontab for each node
+  hosts: workers
+  become: true
+
+  tasks:
+    - name: Copy scripts
+      ansible.builtin.copy:
+        src: /tmp/jed-cluster/scripts/cron/
+        dest: /etc/jobs/
+        mode: 0755
+
+    - name: Setup cronjob for system_stats.sh
+      ansible.builtin.cron:
+        name: System stats
+        job: "/etc/jobs/system_stats.sh > /dev/null"
+        minute: "*/30"
+        state: present
