@@ -23,13 +23,24 @@ AFFINITY_TEMPLATE = {
   }
 }
 
+def update_vars(crd_vars: dict, deployment_vars: dict):
+    with open("output.yaml", "w") as file_out:
+        yaml.safe_dump(crd_templates, file_out)
+        yaml.safe_dump(deployment_templates, file_out)
+
+
 def main():
-    with open("jenkins-deployment.yaml", mode="rb") as file:
-        jenkins_yaml = yaml.safe_load(file)
-    jenkins_yaml["spec"]["template"]["spec"].update(AFFINITY_TEMPLATE)
-    
-    with open("jenkins_yaml.yaml", mode="w") as file:
-        yaml.safe_dump(jenkins_yaml, file)
+    crd_templates = {"crd_templates": []}
+    deployment_templates = {"deployment_templates": []}
+
+    with open("setup.yaml", mode="r") as file:
+        setup_yaml = yaml.safe_load_all(file)
+
+        for doc in setup_yaml:
+            if doc["kind"] == "CustomResourceDefinition":
+                crd_templates["crd_templates"].append(doc["spec"]["names"]["kind"])
+            else:
+                deployment_templates["deployment_templates"].append(doc["kind"])
 
 
 if __name__ == '__main__':

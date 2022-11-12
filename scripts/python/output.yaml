@@ -1,0 +1,19 @@
+crd_templates:
+- ClusterFilter
+- ClusterFilter
+- ClusterFluentBitConfig
+- ClusterFluentdConfig
+- ClusterInput
+- ClusterOutput
+- ClusterOutput
+- ClusterParser
+- Filter
+- FluentBit
+- FluentdConfig
+- Fluentd
+- Output
+deployment_templates:
+- ServiceAccount
+- ClusterRole
+- ClusterRoleBinding
+- Deployment
