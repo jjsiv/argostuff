@@ -26,13 +26,13 @@ json_template='
 json_out=$(printf "$json_template" \
 	"$timestamp"               \
 	"$node_name"               \
-       	"$((cpu_temp / 1000))"     \
-       	"$gpu_temp"	           \
+    "$((cpu_temp / 1000))"     \
+    "$gpu_temp"	               \
 	"${mem_arr[1]}Mi"          \
 	"${mem_arr[2]}Mi"          \
 	"${mem_arr[6]}Mi"          \
 	"${df_arr[0]}"             \
-        "${df_arr[1]}"             \
+    "${df_arr[1]}"             \
 	"${df_arr[2]}"             \
 	"${df_arr[3]}"             \
 	)	
