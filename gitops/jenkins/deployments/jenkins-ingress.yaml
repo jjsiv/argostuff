@@ -21,4 +21,4 @@ spec:
   tls:
   - hosts:
     - jenkins.jed.local
-    secretName: jenkins-secret-ingress
+    secretName: jenkins-ingress
