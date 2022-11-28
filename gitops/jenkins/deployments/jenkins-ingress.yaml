@@ -3,8 +3,9 @@ kind: Ingress
 metadata:
   name: jenkins-ingress
   namespace: jenkins
-  # annotations:
+  annotations:
   #   nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: traefik
 spec:
   ingressClassName: traefik
   rules:
