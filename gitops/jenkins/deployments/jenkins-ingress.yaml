@@ -17,7 +17,7 @@ spec:
           service:
             name: jenkins-service
             port:
-              number: 443
+              number: 8080
   tls:
   - hosts:
     - jenkins.jed.local
