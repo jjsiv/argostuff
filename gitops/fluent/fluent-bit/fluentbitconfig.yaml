@@ -5,7 +5,15 @@ metadata:
   labels:
     app.kubernetes.io/name: fluent-bit
 spec:
+  service:
+    parsersFile: parsers.conf
   inputSelector:
+    matchLabels:
+      fluentbit.fluent.io/enabled: "true"
+  filterSelector:
+    matchLabels:
+      fluentbit.fluent.io/enabled: "true"
+  parserSelector:
     matchLabels:
       fluentbit.fluent.io/enabled: "true"
   outputSelector:
