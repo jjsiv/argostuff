@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-ingress-app
+  name: nfs-provisioner-app
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: nginx-ingress
+  project: nfs-provisioner
   destination:
-    namespace: nginx-ingress
+    namespace: nfs-provisioner
     server: https://kubernetes.default.svc
   source:
-    path: gitops/nginx-ingress/
+    path: gitops/nfs-provisioner
     repoURL: https://github.com/jjsiv/jed-cluster.git
     targetRevision: main
     directory:

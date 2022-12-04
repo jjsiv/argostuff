@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: nginx-ingress
+  name: traefik-ingress
   namespace: argocd
 spec:
   clusterResourceWhitelist:
@@ -16,7 +16,7 @@ spec:
   - group: 'networking.k8s.io'
     kind: '*'
   destinations:
-  - namespace: nginx-ingress
+  - namespace: traefik
     server: https://kubernetes.default.svc
   sourceRepos:
   - https://github.com/jjsiv/jed-cluster.git
