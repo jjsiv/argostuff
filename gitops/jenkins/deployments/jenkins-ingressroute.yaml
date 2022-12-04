@@ -15,7 +15,7 @@ spec:
     - name: jenkins-service
       port: 8080
     middlewares:
-      name: middleware-jenkins-redirect-https
+    - name: middleware-jenkins-redirect-https
       namespace: jenkins
   tls:
     secretName: jenkins-ingress
