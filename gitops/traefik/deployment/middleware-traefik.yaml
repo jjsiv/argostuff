@@ -8,3 +8,5 @@ spec:
     scheme: https
     permanent: true
     port: "443"
+  addPrefix:
+    prefix: /dashboard/
