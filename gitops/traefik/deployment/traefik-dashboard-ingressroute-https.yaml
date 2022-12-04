@@ -14,5 +14,8 @@ spec:
     services:
     - name: api@internal
       kind: TraefikService
+    middlewares:
+    - name: middleware-traefik-addprefix-dashboard
+      namespace: traefik
   tls:
     secretName: traefik-ingress

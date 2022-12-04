@@ -17,3 +17,5 @@ spec:
     middlewares:
     - name: middleware-traefik-redirect-https
       namespace: traefik
+    - name: middleware-traefik-addprefix-dashboard
+      namespace: traefik
