@@ -14,7 +14,7 @@ spec:
   - group: 'storage.k8s.io'
     kind: StorageClass
   destinations:
-  - namespace: jenkins
+  - namespace: nfs-provisioner
     server: https://kubernetes.default.svc
   sourceRepos:
   - https://github.com/jjsiv/jed-cluster.git
