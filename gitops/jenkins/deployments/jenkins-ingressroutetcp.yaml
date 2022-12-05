@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: traefik
 spec:
   entryPoints:
-    - websecure
+    - dashboard
   routes:
   - match: HostSNI(`jenkins.jed.local`)
     services:
