@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: traefik
 spec:
   entryPoints:
-    - dashboard
+    - websecure
   routes:
   - match: HostSNI(`jenkins.jed.local`)
     services:
@@ -16,9 +16,9 @@ spec:
   tls:
     secretName: jenkins-ingress
     passthrough: false
-#    options:                    # [16]
-#      name: opt                 # [17]
-#      namespace: default        # [18]
+    options:
+      name: jenkins-tls
+      namespace: jenkins
 #    certResolver: foo           # [19]
 #    domains:                    # [20]
 #    - main: example.net         # [21]
