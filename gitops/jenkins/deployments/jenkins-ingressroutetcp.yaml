@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: HostSNI(`jenkins.jed.local`)
+  - match: HostSNI(`*`)
     services:
     - name: jenkins-service
       port: 8080
