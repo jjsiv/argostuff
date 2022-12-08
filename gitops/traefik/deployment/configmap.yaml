@@ -36,6 +36,6 @@ data:
         forwardedHeaders:
           insecure: true
       ssh:
-        address: ":22"
+        address: ":2222"
       dashboard:
         address: ":8600"
