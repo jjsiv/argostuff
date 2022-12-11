@@ -18,7 +18,7 @@ data:
         throttleDuration: 10s
     api:
       dashboard: true
-      insecure: true
+      insecure: false
     log:
       level: debug
       filePath: /dev/stdout
@@ -33,9 +33,5 @@ data:
           insecure: true
       websecure:
         address: ":443"
-        forwardedHeaders:
-          insecure: true
-      ssh:
-        address: ":2222"
       dashboard:
         address: ":8600"
