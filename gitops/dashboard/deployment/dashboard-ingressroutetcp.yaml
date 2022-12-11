@@ -1,0 +1,19 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: dashboard-ingressroute-https
+  namespace: kube-system
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  entryPoints:
+    - dashboard
+  routes:
+  - match: HostSNI(`dashboard.jed.local`)
+    services:
+    - name: kube-dashboard
+      port: 443
+  tls:
+    passthrough: true
+    options:
+      name: dashboard-tls

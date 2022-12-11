@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    k8s-app: kube-dashboard
+  name: kube-dashboard
+  namespace: kube-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: kube-dashboard
+subjects:
+  - kind: ServiceAccount
+    name: kube-dashboard
+    namespace: kube-system
