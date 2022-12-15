@@ -1,8 +1,9 @@
 packages:
 - nfs-common
 - jq
-- yq
 - vim
+- apt-transport-https
+- ca-certificates
 - kubeadm={{ kube_version }}
 - kubelet={{ kube_version }}
 - cri-tools={{ kube_version }}

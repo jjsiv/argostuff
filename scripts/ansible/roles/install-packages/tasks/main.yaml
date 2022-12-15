@@ -4,12 +4,28 @@
   ansible.builtin.apt:
     update_cache: yes
 
-- name: Install needed packages
+- name: Download K8s apt key
+  ansible.builtin.get_url:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    dest: /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+    mode: '0644'
+
+- name: Create K8s source for apt
+  ansible.builtin.lineinfile:
+    path: /etc/apt/sources.list.d/kubernetes.list
+    line: "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main"
+    create: yes
+
+- name: Install packages
   ansible.builtin.apt:
     name: "{{ package }}"
   loop: "{{ packages }}"
   loop_control:
     loop_var: package
+
+- name: Mark K8s packages
+  ansible.builtin.shell:
+    cmd: "apt-mark hold kubelet kubeadm kubectl containerd.io"
 
 - name: Cleanup
   ansible.builtin.apt:
