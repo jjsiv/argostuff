@@ -1,9 +1,13 @@
 - name: Test
-  hosts: workers
   become: no
+  hosts: "{{ ansible_hosts | default('localhost') }}"
   gather_facts: no
 
   tasks:
     - name: Print hello
       debug:
         msg: "Hello world!"
+    
+    - name: Create file
+      file:
+        path: /tmp/abc
