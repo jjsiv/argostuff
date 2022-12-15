@@ -1,3 +1,0 @@
-rpi_nodes:
-  - { name: rpi-main, ip: 192.168.55.20 }
-  - { name: rpi-worker1, ip: 192.168.55.30 }

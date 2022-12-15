@@ -1,0 +1,16 @@
+---
+
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install needed packages
+  ansible.builtin.apt:
+    name: "{{ package }}"
+  loop: "{{ packages }}"
+  loop_control:
+    loop_var: package
+
+- name: Cleanup
+  ansible.builtin.apt:
+    clean: yes

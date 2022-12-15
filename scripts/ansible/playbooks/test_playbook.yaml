@@ -1,0 +1,9 @@
+- name: Test
+  hosts: workers
+  become: no
+  gather_facts: no
+
+  tasks:
+    - name: Print hello
+      debug:
+        msg: "Hello world!"

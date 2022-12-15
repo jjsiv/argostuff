@@ -1,8 +1,0 @@
----
-
-- name: Update hosts file
-  ansible.builtin.blockinfile:
-    path: /etc/hosts_test
-    block: |
-      {{ item.ip }} {{ item.name }}
-  loop: "{{ rpi_nodes }}"

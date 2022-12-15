@@ -1,0 +1,10 @@
+[workers]
+rpi-worker1     ansible_host=192.168.55.30
+rpi-worker2     ansible_host=192.168.55.40
+
+[managers]
+rpi-main        ansible_host=192.168.55.20
+
+[cluster:children]
+workers
+managers

@@ -1,0 +1,18 @@
+packages:
+- nfs-common
+- jq
+- yq
+- vim
+- kubeadm={{ kube_version }}
+- kubelet={{ kube_version }}
+- cri-tools={{ kube_version }}
+- containerd.io={{ containerd_version }}
+- neofetch
+- net-tools
+- iputils-ping
+- traceroute
+- dnsutils
+- git
+
+kube_version: 1.24.9-00
+containerd_version: 1.6.10-1
