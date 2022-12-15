@@ -4,10 +4,10 @@ packages:
 - vim
 - apt-transport-https
 - ca-certificates
-- kubeadm={{ kube_version }}
 - kubelet={{ kube_version }}
-- cri-tools={{ kube_version }}
+- kubeadm={{ kube_version }}
 - containerd.io={{ containerd_version }}
+- containernetworking-plugins
 - neofetch
 - net-tools
 - iputils-ping
