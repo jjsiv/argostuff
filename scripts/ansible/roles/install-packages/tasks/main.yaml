@@ -4,6 +4,11 @@
   ansible.builtin.apt:
     update_cache: yes
 
+- name: Create keyring directory
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+
 - name: Download K8s apt key
   ansible.builtin.get_url:
     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
