@@ -1,9 +1,5 @@
 ---
 
-- name: Update apt cache
-  ansible.builtin.apt:
-    update_cache: yes
-
 - name: Create keyring directory
   ansible.builtin.file:
     path: /etc/apt/keyrings
@@ -21,6 +17,10 @@
     path: /etc/apt/sources.list.d/kubernetes.list
     line: "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main"
     create: yes
+
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: yes
 
 - name: Install packages
   ansible.builtin.apt:
