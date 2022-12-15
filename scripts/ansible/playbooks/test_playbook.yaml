@@ -11,3 +11,4 @@
     - name: Create file
       file:
         path: /tmp/abc
+        state: touch
