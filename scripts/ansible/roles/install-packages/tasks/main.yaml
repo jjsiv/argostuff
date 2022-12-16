@@ -13,11 +13,8 @@
     force: true
 
 - name: Download Docker apt key
-  ansible.builtin.get_url:
-    url: https://download.docker.com/linux/debian/gpg
-    dest: /etc/apt/keyrings/docker.gpg
-    mode: '0644'
-    force: true
+  ansible.builtin.shell:
+    cmd: "curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg"
 
 - name: Create K8s source for apt
   ansible.builtin.lineinfile:
