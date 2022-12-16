@@ -45,4 +45,4 @@
 
 - name: Cleanup
   ansible.builtin.apt:
-    clean: yes
+    autoclean: yes
