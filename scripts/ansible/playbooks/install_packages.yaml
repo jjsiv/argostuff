@@ -1,9 +1,0 @@
-- name: Install packages
-  become: yes
-  hosts: "{{ ansible_hosts | default('localhost') }}"
-  gather_facts: no
-
-  tasks:
-    - name: Import role
-      include_role:
-        name: install-packages
