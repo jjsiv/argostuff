@@ -23,7 +23,7 @@ spec:
         operator: Equal
         value: manager
         effect: NoSchedule
-      hostNetwork: false
+      hostNetwork: true
       serviceAccountName: traefik-ingress-controller
       containers:
         - name: traefik
@@ -33,13 +33,10 @@ spec:
           ports:
             - name: web
               containerPort: 80
-              hostPort: 10080
             - name: dashboard
               containerPort: 8080
-              hostPort: 10090
             - name: websecure
               containerPort: 443
-              hostPort: 10100
           securityContext:
             capabilities:
               add:
