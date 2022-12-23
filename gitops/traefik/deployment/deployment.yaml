@@ -6,7 +6,8 @@ metadata:
   labels:
     app: traefik
 spec:
-  strategy: Recreate
+  strategy:
+    type: Recreate
   replicas: 1
   selector:
     matchLabels:
