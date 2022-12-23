@@ -28,10 +28,10 @@ data:
       format: json
     entryPoints:
       web:
-        address: ":80"
+        address: ":10080"
         forwardedHeaders:
           insecure: true
       websecure:
-        address: ":443"
+        address: ":10090"
       dashboard:
-        address: ":8600"
+        address: ":10100"
