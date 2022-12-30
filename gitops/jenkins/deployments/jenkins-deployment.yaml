@@ -28,11 +28,11 @@ spec:
         image: jenkins/jenkins:lts-jdk11
         resources:
           requests:
-            memory: "3Gi"
-            cpu: "500m"
-          limits:
-            memory: "5Gi"
+            memory: "2Gi"
             cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
         ports:
         - containerPort: 8080
         volumeMounts:
