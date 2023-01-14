@@ -9,3 +9,17 @@ images:
 - name: kubesphere/fluent-bit
   newTag: v1.9.9
   newName: kubesphere/fluent-bit
+
+patches:
+  - patch: |-  
+      - op: add
+        path: '/spec/tolerations'
+        value:
+        - effect: NoSchedule
+          key: type
+          value: manager
+          operator: Exists
+    target:
+      group: fluentbit.fluent.io
+      kind: FluentBit
+      name: fluent-bit

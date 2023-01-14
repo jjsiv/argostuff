@@ -5,6 +5,7 @@ resources:
 - clusterrole.yaml
 - clusterrolebinding.yaml
 - deployment.yaml
+- crds/crds.yaml
 
 images:
 - name: kubesphere/fluent-operator
