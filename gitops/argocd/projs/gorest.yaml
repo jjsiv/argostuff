@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: gorest
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - namespace: gorest-dev
+    server: https://kubernetes.default.svc
+  - namespace: gorest-test
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - https://gitlab.com/jedrzejk143/jed-cluster-gitops.git
