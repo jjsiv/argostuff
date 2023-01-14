@@ -16,8 +16,6 @@ patches:
         path: '/spec/tolerations'
         value:
         - effect: NoSchedule
-          key: type
-          value: manager
           operator: Exists
     target:
       group: fluentbit.fluent.io
