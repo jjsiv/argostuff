@@ -8,7 +8,7 @@ spec:
   - group: '*'
     kind: '*'
   destinations:
-  - namespace: argocd
+  - namespace: logging
     server: https://kubernetes.default.svc
   sourceRepos:
   - https://github.com/jjsiv/jed-cluster.git
