@@ -12,8 +12,6 @@ spec:
     path: gitops/fluent
     repoURL: https://github.com/jjsiv/jed-cluster
     targetRevision: main
-    kustomize:
-      version: v4.5.7
   syncPolicy:
     automated:
       selfHeal: true
