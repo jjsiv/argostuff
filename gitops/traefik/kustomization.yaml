@@ -1,5 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
 resources:
-- ./deployment/deployment.yaml
+- traefik/crds/crds.yaml
+- traefik/deployment.yaml
+- traefik/ingressclass.yaml
+- traefik/service.yaml
+- traefik/serviceaccount.yaml
+- traefik/clusterrole.yaml
+- traefik/clusterrolebinding.yaml
+- traefik/traefik-dashboard-ingressroute-http.yaml
+- traefik/traefik-dashboard-ingressroute-https.yaml
+- traefik/traefik-middleware-redirect.yaml
+
+images:
+- name: traefik
+  newTag: v2.9
+  newName: traefik
+
 configMapGenerator:
 - name: traefik-config
   namespace: traefik
