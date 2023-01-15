@@ -9,22 +9,22 @@ providers:
     ingressClass: "traefik"
     allowEmptyServices: true
     throttleDuration: 10s
-  api:
-    dashboard: true
-    insecure: false
-  log:
-    level: debug
-    filePath: /dev/stdout
-    format: json
-  accessLog:
-    filePath: /dev/stdout
-    format: json
-  entryPoints:
-    web:
-      address: ":80"
-      forwardedHeaders:
-      insecure: true
-    websecure:
-      address: ":443"
-    dashboard:
-      address: ":8600"
+api:
+  dashboard: true
+  insecure: false
+log:
+  level: debug
+  filePath: /dev/stdout
+  format: json
+accessLog:
+  filePath: /dev/stdout
+  format: json
+entryPoints:
+  web:
+    address: ":80"
+    forwardedHeaders:
+    insecure: true
+  websecure:
+    address: ":443"
+  dashboard:
+    address: ":8600"
