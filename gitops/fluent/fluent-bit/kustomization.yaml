@@ -7,8 +7,8 @@ resources:
 
 images:
 - name: kubesphere/fluent-bit
-  newTag: v1.9.9
-  newName: kubesphere/fluent-bit
+  newTag: 2.0.6-beta5
+  newName: jjsiv/fluent-bit-custom
 
 patches:
   - patch: |-  
