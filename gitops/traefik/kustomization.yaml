@@ -23,3 +23,6 @@ configMapGenerator:
   namespace: traefik
   files:
   - traefik-config.yaml
+  options:
+    annotations:
+      argocd.argoproj.io/sync-options: Prune=true
