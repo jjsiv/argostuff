@@ -23,7 +23,7 @@ entryPoints:
   web:
     address: ":80"
     forwardedHeaders:
-    insecure: true
+      insecure: true
   websecure:
     address: ":443"
   dashboard:
