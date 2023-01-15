@@ -8,8 +8,6 @@ metadata:
 spec:
   image: kubesphere/fluent-bit:v1.9.9
   fluentBitConfigName: fluent-bit-config
-  args:
-  - mkdir /var/log/fluent-operator
   volumesMounts:
   - mountPath: /var/log/fluent-operator
     name: fluent
