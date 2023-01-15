@@ -5,11 +5,6 @@ resources:
 - fluentbit.yaml
 - fluentbitconfig.yaml
 
-images:
-- name: kubesphere/fluent-bit
-  newTag: 2.0.6-beta5
-  newName: jjsiv/fluent-bit-custom
-
 patches:
   - patch: |-  
       - op: add
@@ -17,6 +12,9 @@ patches:
         value:
         - effect: NoSchedule
           operator: Exists
+      - op: replace
+        path: '/spec/image'
+        value: jjsiv/fluent-bit-custom:2.0.6-beta5
     target:
       group: fluentbit.fluent.io
       kind: FluentBit
