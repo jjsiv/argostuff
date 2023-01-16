@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- tekton/crds/crds.yaml
+- tekton/clusterrolebindings.yaml
+- tekton/clusterroles.yaml
+- tekton/configmaps.yaml
+- tekton/deployments.yaml
+- tekton/hpa.yaml
+- tekton/rolebindings.yaml
+- tekton/roles.yaml
+- tekton/secrets.yaml
+- tekton/serviceaccounts.yaml
+- tekton/services.yaml
+- tekton/webhooks.yaml
+
