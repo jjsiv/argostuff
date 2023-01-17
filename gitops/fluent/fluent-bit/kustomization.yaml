@@ -14,7 +14,7 @@ patches:
           operator: Exists
       - op: replace
         path: '/spec/image'
-        value: jjsiv/fluent-bit-custom:2.0.6-beta5
+        value: kubesphere/fluent-bit:v2.0.6
       - op: add
         path: /spec/args
         value: ["-flb-timeout", "20ms"]
