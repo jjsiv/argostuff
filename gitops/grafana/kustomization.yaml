@@ -4,6 +4,8 @@ kind: Kustomization
 resources:
 - grafana/services.yaml
 - grafana/statefulset.yaml
+- grafana/secret-ingress.yaml
+- grafana/grafana-ingressroute.yaml
 
 namespace: grafana
 
