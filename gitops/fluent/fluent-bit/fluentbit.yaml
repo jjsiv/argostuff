@@ -7,6 +7,9 @@ metadata:
     app.kubernetes.io/name: fluent-bit
 spec:
   image: kubesphere/fluent-bit:v1.9.9
+  positionDB:
+    hostPath:
+      path: /var/log/
   fluentBitConfigName: fluent-bit-config
   volumesMounts:
   - mountPath: /var/log/fluent-operator
