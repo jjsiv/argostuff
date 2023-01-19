@@ -10,3 +10,5 @@ spec:
   - effect: NoSchedule
     operator: Exists
   replicas: 3
+  buffer:
+    DisableBufferVolume: true
