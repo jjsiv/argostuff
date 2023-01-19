@@ -15759,27 +15759,27 @@ spec:
           requests:
             cpu: 100m
             memory: 20Mi
-        volumeMounts:
-        - mountPath: /fluent-operator
-          name: env
-      initContainers:
-      - command:
-        - /bin/sh
-        - -c
-        - set -ex; echo CONTAINER_ROOT_DIR=$(docker info -f '{{.DockerRootDir}}' 2>
-          /dev/null) > /fluent-operator/fluent-bit.env
-        image: docker:20.10
-        name: setenv
-        volumeMounts:
-        - mountPath: /fluent-operator
-          name: env
-        - mountPath: /var/run/docker.sock
-          name: dockersock
-          readOnly: true
+#        volumeMounts:
+#        - mountPath: /fluent-operator
+#          name: env
+#      initContainers:
+#      - command:
+#        - /bin/sh
+#        - -c
+#        - set -ex; echo CONTAINER_ROOT_DIR=$(docker info -f '{{.DockerRootDir}}' 2>
+#          /dev/null) > /fluent-operator/fluent-bit.env
+#        image: docker:20.10
+#        name: setenv
+#        volumeMounts:
+#        - mountPath: /fluent-operator
+#          name: env
+#        - mountPath: /var/run/docker.sock
+#          name: dockersock
+#          readOnly: true
       serviceAccountName: fluent-operator
-      volumes:
-      - emptyDir: {}
-        name: env
-      - hostPath:
-          path: /var/run/docker.sock
-        name: dockersock
+#      volumes:
+#      - emptyDir: {}
+#        name: env
+#      - hostPath:
+#          path: /var/run/docker.sock
+#        name: dockersock

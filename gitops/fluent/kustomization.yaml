@@ -8,6 +8,8 @@ resources:
 configurations:
 - kustomization-config/crd-config.yaml
 
+patchesStrategicMerge:
+- patches/patch-fluent-bit.yaml
 
 
 namespace: logging
