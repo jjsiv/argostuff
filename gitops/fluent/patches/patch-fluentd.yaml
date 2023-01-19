@@ -11,4 +11,18 @@ spec:
     operator: Exists
   replicas: 3
   buffer:
-    DisableBufferVolume: true
+    DisableBufferVolume: false
+    pvc:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        name: fluentd-buffer-pvc
+        namespace: logging
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        storageClassName: nfs-default
+        resources:
+          requests:
+            storage: 1Gi
+        volumeMode: Filesystem
