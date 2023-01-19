@@ -12,17 +12,4 @@ spec:
   replicas: 3
   buffer:
     DisableBufferVolume: false
-    pvc:
-      apiVersion: v1
-      kind: PersistentVolumeClaim
-      metadata:
-        name: fluentd-buffer-pvc
-        namespace: logging
-      spec:
-        accessModes:
-          - "ReadWriteOnce"
-        storageClassName: nfs-default
-        resources:
-          requests:
-            storage: 2Gi
-        volumeMode: Filesystem
+    emptyDir: {}
