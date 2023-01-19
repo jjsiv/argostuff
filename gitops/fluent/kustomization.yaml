@@ -2,7 +2,33 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- fluent-operator/
-- fluent-bit/
+- setup/setup.yaml
+- setup/fluent-bit.yaml
+
+configurations:
+- kustomization-config/crd-config.yaml
 
 
+
+namespace: logging
+
+images:
+- name: kubesphere/fluent-bit
+  newTag: v2.0.6
+  newName: kubesphere/fluent-bit
+
+- name: kubesphere/fluent-operator
+  newTag: v1.7.0
+  newName: kubesphere/fluent-operator
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+- name: fluent-lua-scripts
+  files:
+  - setup/scripts/containerd.lua
+  options:
+    labels:
+      fluentbit.fluent.io/enabled: "true"
+      fluentbit.fluent.io/environment: "jed"
