@@ -22,7 +22,7 @@ images:
   newName: kubesphere/fluent-bit
 
 - name: kubesphere/fluentd
-  newTag: v1.14.6
+  newTag: v1.14.6-arm64
   newName: kubesphere/fluentd
 
 - name: kubesphere/fluent-operator
