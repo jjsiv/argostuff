@@ -4,12 +4,14 @@ kind: Kustomization
 resources:
 - setup/setup.yaml
 - setup/fluent-bit.yaml
+- setup/fluentd.yaml
 
 configurations:
 - kustomization-config/crd-config.yaml
 
 patchesStrategicMerge:
 - patches/patch-fluent-bit.yaml
+- patches/patch-fluentd.yaml
 
 
 namespace: logging
@@ -18,6 +20,10 @@ images:
 - name: kubesphere/fluent-bit
   newTag: v2.0.6
   newName: kubesphere/fluent-bit
+
+- name: kubesphere/fluentd
+  newTag: v1.14.6
+  newName: kubesphere/fluentd
 
 - name: kubesphere/fluent-operator
   newTag: v1.7.0

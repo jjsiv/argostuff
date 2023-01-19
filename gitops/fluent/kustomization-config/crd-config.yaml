@@ -1,3 +1,6 @@
 images:
 - path: spec/image
   kind: FluentBit
+
+- path: spec/image
+  kind: Fluentd
