@@ -32,11 +32,13 @@ spec:
       kubeURL: https://kubernetes.default.svc:443
       kubeCAFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
       kubeTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
-      useKubelet: true
-      kubeletPort: 10250
+#      useKubelet: true
+#      kubeletPort: 10250
       bufferSize: 1MB
       annotations: true
       labels: true
+      dnsRetries: 3
+      dnsWaitTime: 10
 
 ---
 
