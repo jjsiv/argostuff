@@ -27,8 +27,8 @@ images:
 #  newName: kubesphere/fluentd
 
 - name: kubesphere/fluent-operator
-  newTag: v1.7.0
-  newName: kubesphere/fluent-operator
+  newTag: 1.7.0-use-kubelet
+  newName: jjsiv/fluent-operator
 
 generatorOptions:
   disableNameSuffixHash: true
