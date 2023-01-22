@@ -10,3 +10,9 @@ spec:
   positionDB:
     hostPath:
       path: /var/lib/fluent-bit/
+  rbacRules:
+    - apiGroups: [""]
+      resources: ["nodes/proxy"]
+      verbs: ["get"]
+
+    
