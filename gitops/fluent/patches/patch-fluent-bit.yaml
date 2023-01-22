@@ -25,6 +25,5 @@ metadata:
   name: fluent-bit-config
 spec:
   service:
-    logLevel: debug
-    logFile: /var/log/fluent-operator/flb-debug.log
+    logLevel: info
     parsersFile: parsers.conf
