@@ -17,6 +17,7 @@ spec:
     metadata:
       labels:
         app: traefik
+        app.kubernetes.io/name: traefik 
     spec:
       nodeName: rpi-main
       tolerations:
