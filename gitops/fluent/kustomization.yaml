@@ -10,6 +10,7 @@ configurations:
 - kustomization-config/crd-config.yaml
 
 patchesStrategicMerge:
+- patches/patch-clusterrole.yaml
 - patches/patch-fluent-bit.yaml
 #- patches/patch-fluentd.yaml
 

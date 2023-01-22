@@ -1,0 +1,52 @@
+apiVersion: fluentbit.fluent.io/v1alpha2
+kind: ClusterInput
+metadata:
+  name: traefik-tail
+  labels:
+    fluentbit.fluent.io/enabled: "true"
+    fluentbit.fluent.io/environment: jed
+spec:
+  tail:
+    tag: traefik.*
+    path: /var/log/containers/*_traefik_*.log
+    refreshIntervalSeconds: 10
+    parser: json
+    memBufLimit: 5MB
+    skipLongLines: true
+    db: /fluent-bit/tail/pos.db
+    dbSync: Normal
+
+---
+
+apiVersion: fluentbit.fluent.io/v1alpha2
+kind: ClusterFilter
+metadata:
+  name: traefik-filter
+  labels:
+    fluentbit.fluent.io/enabled: "true"
+    fluentbit.fluent.io/environment: jed
+spec:
+  match: traefik.*
+  filters:
+  - kubernetes:
+      kubeURL: https://kubernetes.default.svc:443
+      kubeCAFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+      kubeTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+      useKubelet: true
+      kubeletPort: 10250
+
+---
+
+apiVersion: fluentbit.fluent.io/v1alpha2
+kind: ClusterOutput
+metadata:
+  name: fluentd
+  labels:
+    fluentbit.fluent.io/enabled: "true"
+    fluentbit.fluent.io/environment: jed
+spec:
+  match: traefik.*
+  file:
+    path: /var/log/fluent-operator
+    file: traefik.log
+    format: plain
