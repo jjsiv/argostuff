@@ -27,7 +27,7 @@ images:
 #  newName: kubesphere/fluentd
 
 - name: kubesphere/fluent-operator
-  newTag: 1.7.0-use-kubelet
+  newTag: v1.7.1
   newName: jjsiv/fluent-operator
 
 generatorOptions:
