@@ -15,7 +15,7 @@ spec:
       resources: ["nodes/proxy"]
       verbs: ["get"]
   hostNetwork: true
-  dnsPolicy: ClusterFirstWithHostNet
+#  dnsPolicy: ClusterFirstWithHostNet
 
 ---
 
