@@ -9,4 +9,4 @@ spec:
     operator: Exists
   positionDB:
     hostPath:
-      path: /var/log/
+      path: /var/lib/fluent-bit/
