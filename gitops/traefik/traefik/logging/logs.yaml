@@ -36,10 +36,11 @@ spec:
       useKubelet: true
       kubeletPort: 10250
       bufferSize: 1MB
-      annotations: true
+      annotations: false
       labels: true
       dnsRetries: 3
       dnsWaitTime: 10
+      kubeMetaCacheTTL: 30s
 
 ---
 
