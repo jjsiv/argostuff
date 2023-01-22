@@ -14,5 +14,16 @@ spec:
     - apiGroups: [""]
       resources: ["nodes/proxy"]
       verbs: ["get"]
+  hostNetwork: true
 
-    
+---
+
+apiVersion: fluentbit.fluent.io/v1alpha2
+kind: ClusterFluentBitConfig
+metadata:
+  name: fluent-bit-config
+spec:
+  service:
+    logLevel: debug
+    logFile: /var/log/fluent-operator/flb-debug.log
+    parsersFile: parsers.conf
