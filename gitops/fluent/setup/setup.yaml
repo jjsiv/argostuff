@@ -15692,6 +15692,7 @@ rules:
   - configmaps
   - services
   - namespaces
+  - nodes/proxy
   verbs:
   - create
   - delete
